@@ -37,6 +37,8 @@ EXAMPLE:
 - **How I tested it:** AC1.1 passed (cards show name, photo, price). AC1.3 passed
   after my fix (empty message shows).
 - **What I learned:** forEach runs the same code once for every item in an array.
+
+Minimum of 5 meaningful AI logs.
 -->
 
 ## Entry 1: [Date]
