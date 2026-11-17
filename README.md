@@ -1,4 +1,4 @@
-# [App Name]
+# [AliJob- A local inclusive job Board]
 <!-- About your app: what does your app do? Example: "Today's carinderia menu and orders, without paper." -->
 
 ## Problem
