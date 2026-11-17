@@ -25,7 +25,7 @@ Example: Customers view today's menu; the owner adds and tracks orders. -->
 
 ## Team
 <!-- Name – role. Example: Juan Dela Cruz – Developer -->
-- 
+- **Jearl Miles N. Sedeno** - Front end Developer
 
 ## Live Link
 <!-- Add your GitHub Pages link once deployed. -->
