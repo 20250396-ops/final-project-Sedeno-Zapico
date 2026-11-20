@@ -58,10 +58,16 @@ Minimum of 5 meaningful AI logs.
 - **What I learned:** Sensitive data must be considered when creating job listings, the user stories must not have untangible and immeasurable features/standards
 
 ### Entery 3: November 20, 2026
-- **User story:** US1: Job listings 
+- **User story:** US1: Job listings (phase 1) 
 - **What I asked:** "proceed with the next step of the web page"
 - **What the AI suggested:** Provided files to set up for the features of the web app
 - **What I changed or rejected, and why:** Regected adding index.html to a file with the other features.
 - **How I tested it:** Not tested yet
 - **What I learned:** Initial scafolding (index.html) boilerplate must be initialized and use unstylized text and test.
 
+### Entery 3: November 20, 2026
+- **User story:** Job listings  
+- **What I asked:** "prooced to the next step"
+- **What the AI suggested:** Gave a string of code that contains the section of articles acting as conatiner for job post
+- **What I changed or rejected, and why:** none everything alligns with project
+- **What I learned:** Headers are by level not by size, sections are containers tp group objects, articles is a tag for one complete item 
