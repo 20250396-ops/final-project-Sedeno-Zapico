@@ -73,8 +73,15 @@ Minimum of 5 meaningful AI logs.
 - **What I learned:** Headers are by level not by size, sections are containers to group objects, articles are tags for one complete item 
 
 ### Entery 5: November 20, 2026
-- **User story:** Job listings*(3)* 
+- **User story:** Job listings*(2.1)* 
 - **What I asked:** "prooced to the next step"
 - **What the AI suggested:** Gave CSS decleration for Html
 - **What I changed or rejected, and why:** None everything alligns with project
 - **What I learned:** The difference between a padding,margin, and border together with grid template columns and fr 
+
+### Entery 6: November 20, 2026
+- **User story:** Job listings*(3)* 
+- **What I asked:** "prooced to the next step"
+- **What the AI suggested:** Gave Java decleration for data to be from java not manually inputed
+- **What I changed or rejected, and why:** Did not comply to deleting Job post html section, still being used and will come out blank and render java code useless without class
+- **What I learned:** Creating an array list 
