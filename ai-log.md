@@ -41,10 +41,27 @@ EXAMPLE:
 Minimum of 5 meaningful AI logs.
 -->
 
-## Entry 1: [Date]
-- **User story:**
-- **What I asked:**
-- **What the AI suggested:**
-- **What I changed or rejected, and why:**
-- **How I tested it:**
-- **What I learned:**
+## Entry 1: November 19,2026
+- **User story:** US1: List project pages
+- **What I asked:** "Here is my project: what are the pages i need for this?"
+- **What the AI suggested:** Suggested website pages: Home / Browse Jobs, Post a Job, Login / Sign Up, and Files.
+- **What I changed or rejected, and why:** Regected log-in, Noted but will implement at a later date
+- **How I tested it:** Subject for testing and mainly for inquiry.
+- **What I learned:** Features will have an independent Html
+
+## Entry 2: November 19.2026
+**User story:** US1: Browse jobs in a card grid
+- **What I asked:** I asked the AI to check my user story about browsing local jobs with title, location, pay, and employer contact details.
+- **What the AI suggested:** Stated "dashboard" did not match my plan, employer contact details were not in my proposal and could be a privacy risk, and "near my home" and "clean" could not be tested. It asked me to write acceptance criteria.
+- **What I changed or rejected, and why:** I removed "employer contact details" and "flexible work", and I replaced them with category.
+- **How I tested it:** Not tested yet. This was planning only. I will test AC1.1 to AC1.3 after I build the card grid and popup.
+- **What I learned:** Sensitive data must be considered when creating job listings, the user stories must not have untangible and immeasurable features/standards
+
+### Entery 3: November 20, 2026
+- **User story:** US1: Job listings 
+- **What I asked:** "proceed with the next step of the web page"
+- **What the AI suggested:** Provided files to set up for the features of the web app
+- **What I changed or rejected, and why:** Regected adding index.html to a file with the other features.
+- **How I tested it:** Not tested yet
+- **What I learned:** Initial scafolding (index.html) boilerplate must be initialized and use unstylized text and test.
+

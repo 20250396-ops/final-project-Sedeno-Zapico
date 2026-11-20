@@ -17,6 +17,7 @@ US1: As a customer, I want to see today's menu with prices so that I can decide 
 US - User Story
 -->
 ### Job listing
+
 US1: As a job seeker, I want to browse available local jobs in a card grid showing the title, location, pay amount, and category, so that I can easily see job listings. 
 
 ### Job posting
