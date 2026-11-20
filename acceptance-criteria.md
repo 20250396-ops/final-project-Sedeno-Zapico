@@ -19,16 +19,26 @@ Example:
 AC - Acceptance Criteria
 -->
 
-### Feature:
+### Feature: Job Listing
 
-US1:
+US1: As a job seeker, I want to browse available local jobs in a card grid showing the title, location, pay amount, and category, so that I can easily see job listings.
 
-* AC1.1:
-* AC1.2:
+* AC1.1: Given I am on the home page and jobs are saved, When the page loads, Then I see the jobs as cards in a grid, And each card shows the title, location, pay, and category.
+* AC1.2: Given I am on the home page and the cards are showing, When I click a job card, Then a popup opens, And the popup shows the full description and location of that job.
+* AC1.3: Given the popup is open, When I click the close button, Then the popup closes, And I see the card grid again.
 
-### Feature:
+### Feature: Job Posting
 
-US2:
+US2: As a homeowner, I want to fill out a form to post a new job with a title, category, description, location, and pay amount, so that job seekers can find my listing.
 
-* AC2.1:
-* AC2.2:
+* AC2.1: Given I am on the Post a Job page, When I fill in the title, category, description, location, and pay, and click "Post Job", Then the job is saved, And it appears as a new card on the home page.
+* AC2.2: Given I am on the Post a Job page, When I leave any field empty and click "Post Job", Then the job is not saved, And I see a message that says which field is missing.
+
+### Feature: Five Star Rating
+
+US3: As a homeowner, I want to view and give 1 to 5 star ratings on job seeker profiles, so that I can choose reliable workers.
+
+* AC3.1: Given I am on a job seeker's profile page and they have ratings, When the page loads, Then I see their average rating as stars beside their icon, And I see the number (for example, 4.0).
+* AC3.2: Given I am on a job seeker's profile page and they have no ratings, When the page loads, Then I see "No ratings yet" beside their icon.
+* AC3.3: Given I am on a job seeker's profile page, When I click a star from 1 to 5, Then that rating is added to the job seeker's list of ratings, And the average on the profile updates right away.
+

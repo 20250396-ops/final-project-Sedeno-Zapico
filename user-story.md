@@ -16,9 +16,14 @@ US1: As a customer, I want to see today's menu with prices so that I can decide 
 
 US - User Story
 -->
+### Job listing
+US1: As a job seeker, I want to browse available local jobs in a card grid showing the title, location, pay amount, and category, so that I can easily see job listings. 
 
-US1:
+### Job posting
 
-US2:
+US1: As a homeowner, I want to fill out a form to post a new job with a title, category, description, location, and pay amount, so that local workers can find and apply for my listing. 
 
-US3:
+
+### Five star rating 
+
+US1: As a homeowner, I want to view 1–5 star ratings and comments for job workers, to evaluate them.
