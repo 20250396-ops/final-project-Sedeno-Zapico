@@ -19,14 +19,16 @@ Example:
 AC - Acceptance Criteria
 -->
 
-## US1:
-- AC1.1:
-- AC1.2:
+### Feature:
 
-## US2:
-- AC2.1:
-- AC2.2:
+US1:
 
-## US3:
-- AC3.1:
-- AC3.2:
+* AC1.1:
+* AC1.2:
+
+### Feature:
+
+US2:
+
+* AC2.1:
+* AC2.2:
