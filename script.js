@@ -17,6 +17,12 @@ const jobs = [
     pay: 350,
     category: "Gardening",
   },
+  {
+    title: "Gardening Services",
+    location: "Manolo, Cagayan de Oro",
+    pay: 350,
+    category: "Gardening",
+  },
 ];
 
 function createJobCard(job) {
