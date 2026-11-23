@@ -43,4 +43,10 @@ US3: As a homeowner, I want to view and give 1 to 5 star ratings on job seeker p
 - AC3.2: Given I am on a job seeker's profile page and they have no ratings, When the page loads, Then I see "No ratings yet" beside their icon.
 - AC3.3: Given I am on a job seeker's profile page, When I click a star from 1 to 5, Then that rating is added to the job seeker's list of ratings, And the average on the profile updates right away.
 
-# CREATE cATEGOTY AC and US
+### Feature: Category Filter
+
+US4: As a job seeker, I want to filter the job listings by category using a dropdown, so that I can see only the kind of work I am looking for.
+
+- AC4.1: Given I am on the home page and the job cards are showing, When I choose a category from the dropdown, Then only the cards with that category are shown, And the other cards are hidden.
+- AC4.2: Given I have chosen a category, When I choose "All", Then all the job cards are shown again.
+- AC4.3: Given I am on the home page, When I choose a category that has no jobs, Then I see a "No jobs found" message, And no cards are shown.
