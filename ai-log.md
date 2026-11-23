@@ -140,4 +140,5 @@ Minimum of 5 meaningful AI logs.
 - **What I asked:** "Next"
 - **What the AI suggested:** the popup HTML
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
-- **What I learned:** dialog: a built-in HTML tag for popups. It is hidden by default, so your page looks the same after you paste it.
+- **What I learned:** dialog:
+  a built-in HTML tag for popups. It is hidden by default, so your page looks the same after you paste it.
