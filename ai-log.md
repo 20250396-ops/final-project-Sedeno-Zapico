@@ -125,3 +125,11 @@ Minimum of 5 meaningful AI logs.
 - **What the AI suggested:** Delete the whole dropdown block
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** only adding a second listener for the search box, the two controls will ignore each other. Pick Cleaning, type a word, and the dropdown choice would be lost. So we put both checks in one function.
+
+### Entery 11: November 23, 2026
+
+- **User story:** Category filter
+- **What I asked:** "Next"
+- **What the AI suggested:** "No jobs found" message
+- **What I changed or rejected, and why:** Change the recommendation from line to exact code function name
+- **What I learned:** The code filters out each job list.length === 0: length is how many items are in the array. Zero means nothing matched.
