@@ -51,9 +51,16 @@ function createJobCard(job) {
 
 console.log(jobs);
 const jobGrid = document.querySelector(".job-grid");
-
 function showJobs(list) {
   jobGrid.innerHTML = "";
+
+  if (list.length === 0) {
+    const message = document.createElement("p");
+    message.className = "no-results";
+    message.textContent = "No jobs found.";
+    jobGrid.append(message);
+    return;
+  }
 
   list.forEach(function (job) {
     jobGrid.append(createJobCard(job));
