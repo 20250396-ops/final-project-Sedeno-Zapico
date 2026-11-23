@@ -142,3 +142,11 @@ Minimum of 5 meaningful AI logs.
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** dialog:
   a built-in HTML tag for popups. It is hidden by default, so your page looks the same after you paste it.
+
+### Entery 13: November 23, 2026
+
+- **User story:** Jop Popup
+- **What I asked:** "Next"
+- **What the AI suggested:** fill the popup and make Close work
+- **What I changed or rejected, and why:** None, Everthing alligns with the objective
+- **What I learned:** popup.showModal(): opens the popup with the dark backdrop.
