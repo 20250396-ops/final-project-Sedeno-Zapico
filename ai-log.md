@@ -133,3 +133,11 @@ Minimum of 5 meaningful AI logs.
 - **What the AI suggested:** "No jobs found" message
 - **What I changed or rejected, and why:** Change the recommendation from line to exact code function name
 - **What I learned:** The code filters out each job list.length === 0: length is how many items are in the array. Zero means nothing matched.
+
+### Entery 12: November 23, 2026
+
+- **User story:** Jop Popup
+- **What I asked:** "Next"
+- **What the AI suggested:** the popup HTML
+- **What I changed or rejected, and why:** None, Everthing alligns with the objective
+- **What I learned:** dialog: a built-in HTML tag for popups. It is hidden by default, so your page looks the same after you paste it.
