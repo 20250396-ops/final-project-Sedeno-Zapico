@@ -4,30 +4,36 @@ const jobs = [
     location: "Carmen, Cagayan de Oro",
     pay: 500,
     category: "Cleaning",
+    description: "wiping dirty places",
   },
   {
     title: "Babysitter Needed",
     location: "Lapasan, Cagayan de Oro",
     pay: 400,
     category: "Babysitting",
+    description: "experience with infant",
   },
   {
     title: "Garden Cleanup",
     location: "Bulua, Cagayan de Oro",
     pay: 350,
     category: "Gardening",
+    description: "watering my plants.",
   },
   {
     title: "Gardening Services",
     location: "Manolo, Cagayan de Oro",
     pay: 350,
     category: "Gardening",
+    description: "planting flowers in the backyard.",
   },
   {
     title: "Dry Cleaning Services",
     location: "Alae, Manolo Fortich",
     pay: 350,
     category: "Dry Cleaning",
+    description:
+      "Need help cleaning a 2-bedroom house. Sweeping, mopping, and washing dishes.",
   },
 ];
 
