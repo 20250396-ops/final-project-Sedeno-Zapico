@@ -61,3 +61,18 @@ function showJobs(list) {
 }
 
 showJobs(jobs);
+
+const categoryFilter = document.getElementById("category-filter");
+
+categoryFilter.addEventListener("change", function () {
+  const selected = categoryFilter.value;
+
+  if (selected === "all") {
+    showJobs(jobs);
+  } else {
+    const filtered = jobs.filter(function (job) {
+      return job.category === selected;
+    });
+    showJobs(filtered);
+  }
+});
