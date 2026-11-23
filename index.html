@@ -14,6 +14,18 @@
 
     <main>
       <h2>Available Jobs</h2>
+      <div class="controls">
+        <label for="category-filter">Category</label>
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="Cleaning">Cleaning</option>
+          <option value="Babysitting">Babysitting</option>
+          <option value="Gardening">Gardening</option>
+        </select>
+
+        <label for="search-input">Search</label>
+        <input type="text" id="search-input" placeholder="Type a keyword" />
+      </div>
       <section class="job-grid"></section>
     </main>
 
