@@ -109,3 +109,11 @@ Minimum of 5 meaningful AI logs.
 - **What the AI suggested:** Delete the typed cards
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** section class="job-grid" tags. Only remove the cards inside them. If you delete the section too, querySelector(".job-grid") returns null and the JavaScript fails with an error.
+
+### Entery 7: November 23, 2026
+
+- **User story:** Job listings*(3.1)*
+- **What I asked:** "Next"
+- **What the AI suggested:** provided a short plan for Step 3, part 2: the category filter and search bar.
+- **What I changed or rejected, and why:** None, Everthing alligns with the objective
+- **What I learned:** (label for="category-filter"): the text that names a control. The for value must match the control's id. This makes screen readers announce the control correctly, and it lets people tap the label to focus the control. It is an accessibility must-have
