@@ -62,6 +62,9 @@ function createJobCard(job) {
   descriptionEl.textContent = "description: " + job.description;
 
   card.append(titleEl, locationEl, payEl, categoryEl);
+  card.addEventListener("click", function () {
+    openJobPopup(job);
+  });
   return card;
 }
 
