@@ -48,10 +48,16 @@ function createJobCard(job) {
   card.append(titleEl, locationEl, payEl, categoryEl);
   return card;
 }
+
 console.log(jobs);
 const jobGrid = document.querySelector(".job-grid");
 
-jobs.forEach(function (job) {
-  const card = createJobCard(job);
-  jobGrid.append(card);
-});
+function showJobs(list) {
+  jobGrid.innerHTML = "";
+
+  list.forEach(function (job) {
+    jobGrid.append(createJobCard(job));
+  });
+}
+
+showJobs(jobs);
