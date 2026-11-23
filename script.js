@@ -100,3 +100,18 @@ function applyFilters() {
 
 categoryFilter.addEventListener("change", applyFilters);
 searchInput.addEventListener("input", applyFilters);
+const popup = document.getElementById("job-popup");
+const popupClose = document.getElementById("popup-close");
+
+function openJobPopup(job) {
+  document.getElementById("popup-title").textContent = job.title;
+  document.getElementById("popup-description").textContent = job.description;
+  document.getElementById("popup-location").textContent =
+    "Location: " + job.location;
+  document.getElementById("popup-pay").textContent = "Pay: ₱" + job.pay;
+  popup.showModal();
+}
+
+popupClose.addEventListener("click", function () {
+  popup.close();
+});
