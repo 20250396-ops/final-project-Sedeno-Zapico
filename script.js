@@ -23,6 +23,12 @@ const jobs = [
     pay: 350,
     category: "Gardening",
   },
+  {
+    title: "Dry Cleaning Services",
+    location: "Alae, Manolo Fortich",
+    pay: 350,
+    category: "Dry Cleaning",
+  },
 ];
 
 function createJobCard(job) {
