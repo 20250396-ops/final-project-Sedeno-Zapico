@@ -50,3 +50,13 @@ US4: As a job seeker, I want to filter the job listings by category using a drop
 - AC4.1: Given I am on the home page and the job cards are showing, When I choose a category from the dropdown, Then only the cards with that category are shown, And the other cards are hidden.
 - AC4.2: Given I have chosen a category, When I choose "All", Then all the job cards are shown again.
 - AC4.3: Given I am on the home page, When I choose a category that has no jobs, Then I see a "No jobs found" message, And no cards are shown.
+
+### Feature: Keyword Search
+
+US5: As a job seeker, I want to search the job listings by typing a keyword, so that I can quickly find a job that matches what I need.
+
+- AC5.1: Given I am on the home page and the job cards are showing, When I type a keyword in the search bar, Then only the cards whose title or location contains the keyword are shown.
+- AC5.2: Given I have typed a keyword, When I clear the search bar, Then all the job cards are shown again.
+- AC5.3: Given I have chosen a category, When I type a keyword in the search bar, Then only the cards that match both the category and the keyword are shown.
+- AC5.4: Given I am on the home page, When I type a keyword in capital or small letters, Then the same cards are shown.
+- AC5.5: Given I am on the home page, When I type a keyword that matches no job, Then I see a "No jobs found" message, And no cards are shown.
