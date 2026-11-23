@@ -57,6 +57,10 @@ function createJobCard(job) {
   categoryEl.className = "job-category";
   categoryEl.textContent = "Category: " + job.category;
 
+  const descriptionEl = document.createElement("p");
+  descriptionEl.className = "description";
+  descriptionEl.textContent = "description: " + job.description;
+
   card.append(titleEl, locationEl, payEl, categoryEl);
   return card;
 }
