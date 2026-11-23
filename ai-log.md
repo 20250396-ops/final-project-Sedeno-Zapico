@@ -95,3 +95,9 @@ Minimum of 5 meaningful AI logs.
 - **What I learned:** Creating an array list
 
 ### Entery 7: November 23, 2026
+
+- **User story:** Job listings*(3.1)*
+- **What I asked:** "prooced to the next step"
+- **What the AI suggested:** Gave the code that loop and puts every card on the page.
+- **What I changed or rejected, and why:** None, Everthing alligns with the objective
+- **What I learned:** Learned Query selector
