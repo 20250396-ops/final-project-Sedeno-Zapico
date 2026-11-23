@@ -3,20 +3,49 @@ const jobs = [
     title: "House Cleaning",
     location: "Carmen, Cagayan de Oro",
     pay: 500,
-    category: "Cleaning"
+    category: "Cleaning",
   },
   {
     title: "Babysitter Needed",
     location: "Lapasan, Cagayan de Oro",
     pay: 400,
-    category: "Babysitting"
+    category: "Babysitting",
   },
   {
     title: "Garden Cleanup",
     location: "Bulua, Cagayan de Oro",
     pay: 350,
-    category: "Gardening"
-  }
+    category: "Gardening",
+  },
 ];
 
+function createJobCard(job) {
+  const card = document.createElement("article");
+  card.className = "job-card";
+
+  const titleEl = document.createElement("h3");
+  titleEl.className = "job-title";
+  titleEl.textContent = job.title;
+
+  const locationEl = document.createElement("p");
+  locationEl.className = "job-location";
+  locationEl.textContent = "Location: " + job.location;
+
+  const payEl = document.createElement("p");
+  payEl.className = "job-pay";
+  payEl.textContent = "Pay: ₱" + job.pay;
+
+  const categoryEl = document.createElement("p");
+  categoryEl.className = "job-category";
+  categoryEl.textContent = "Category: " + job.category;
+
+  card.append(titleEl, locationEl, payEl, categoryEl);
+  return card;
+}
 console.log(jobs);
+const jobGrid = document.querySelector(".job-grid");
+
+jobs.forEach(function (job) {
+  const card = createJobCard(job);
+  jobGrid.append(card);
+});
