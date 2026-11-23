@@ -61,18 +61,23 @@ function showJobs(list) {
 }
 
 showJobs(jobs);
-
 const categoryFilter = document.getElementById("category-filter");
+const searchInput = document.getElementById("search-input");
 
-categoryFilter.addEventListener("change", function () {
+function applyFilters() {
   const selected = categoryFilter.value;
+  const keyword = searchInput.value.trim().toLowerCase();
 
-  if (selected === "all") {
-    showJobs(jobs);
-  } else {
-    const filtered = jobs.filter(function (job) {
-      return job.category === selected;
-    });
-    showJobs(filtered);
-  }
-});
+  const result = jobs.filter(function (job) {
+    const matchesCategory = selected === "all" || job.category === selected;
+    const matchesKeyword =
+      job.title.toLowerCase().includes(keyword) ||
+      job.location.toLowerCase().includes(keyword);
+    return matchesCategory && matchesKeyword;
+  });
+
+  showJobs(result);
+}
+
+categoryFilter.addEventListener("change", applyFilters);
+searchInput.addEventListener("input", applyFilters);

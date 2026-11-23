@@ -102,7 +102,7 @@ Minimum of 5 meaningful AI logs.
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** Learned Query selector
 
-### Entery 7: November 23, 2026
+### Entery 8: November 23, 2026
 
 - **User story:** Job listings*(3.1)*
 - **What I asked:** "OK"
@@ -110,10 +110,18 @@ Minimum of 5 meaningful AI logs.
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** section class="job-grid" tags. Only remove the cards inside them. If you delete the section too, querySelector(".job-grid") returns null and the JavaScript fails with an error.
 
-### Entery 7: November 23, 2026
+### Entery 9: November 23, 2026
 
 - **User story:** Job listings*(3.1)*
 - **What I asked:** "Next"
 - **What the AI suggested:** provided a short plan for Step 3, part 2: the category filter and search bar.
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** (label for="category-filter"): the text that names a control. The for value must match the control's id. This makes screen readers announce the control correctly, and it lets people tap the label to focus the control. It is an accessibility must-have
+
+### Entery 10: November 23, 2026
+
+- **User story:** Job listings*(3.1)*
+- **What I asked:** "Next"
+- **What the AI suggested:** Delete the whole dropdown block
+- **What I changed or rejected, and why:** None, Everthing alligns with the objective
+- **What I learned:** only adding a second listener for the search box, the two controls will ignore each other. Pick Cleaning, type a word, and the dropdown choice would be lost. So we put both checks in one function.
