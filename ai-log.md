@@ -120,49 +120,64 @@ Minimum of 5 meaningful AI logs.
 
 ### Entery 10: November 23, 2026
 
-- **User story:** Job listings*(3.1)*
-- **What I asked:** "Next"
-- **What the AI suggested:** Delete the whole dropdown block
-- **What I changed or rejected, and why:** None, Everthing alligns with the objective
-- **What I learned:** only adding a second listener for the search box, the two controls will ignore each other. Pick Cleaning, type a word, and the dropdown choice would be lost. So we put both checks in one function.
+## Nov 23, 2026
 
-### Entery 11: November 23, 2026
+---
 
-- **User story:** Category filter
-- **What I asked:** "Next"
-- **What the AI suggested:** "No jobs found" message
-- **What I changed or rejected, and why:** Change the recommendation from line to exact code function name
-- **What I learned:** The code filters out each job list.length === 0: length is how many items are in the array. Zero means nothing matched.
+**User story:** US1: Browse jobs in a card grid (popup)
 
-### Entery 12: November 23, 2026
+- **What I asked:** I asked the AI how to build a popup that shows the full job details when a card is clicked.
+- **What the AI suggested:** Use a `<dialog>` element, fill it with one job's details using a function, and open it with `showModal()`. It also suggested making cards usable with Tab, Enter, and Space.
+- **What I changed or rejected, and why:** ✏️ (hint: what did you add to your jobs array, and what did you change about the cards?)
+- **How I tested it:** AC1.2 passed (each card opens its own details). AC1.3 passed (the Close button closes it). Esc does not close it yet, and I am still checking why.
+- **What I learned:** ✏️ (hint: why we reuse one popup and fill it with different data)
 
-- **User story:** Jop Popup
-- **What I asked:** "Next"
-- **What the AI suggested:** the popup HTML
-- **What I changed or rejected, and why:** None, Everthing alligns with the objective
-- **What I learned:** dialog:
-  a built-in HTML tag for popups. It is hidden by default, so your page looks the same after you paste it.
+---
 
-### Entery 13: November 23, 2026
+**User story:** US4: Category filter
 
-- **User story:** Jop Popup
-- **What I asked:** "Next"
-- **What the AI suggested:** fill the popup and make Close work
-- **What I changed or rejected, and why:** None, Everthing alligns with the objective
-- **What I learned:** popup.showModal(): opens the popup with the dark backdrop.
+- **What I asked:** I asked the AI how to filter the jobs by category using a dropdown.
+- **What the AI suggested:** Use `jobs.filter(...)` to make a new list, and show it with the `showJobs` function.
+- **What I changed or rejected, and why:** ✏️ (hint: did you change any category names or options?)
+- **How I tested it:** AC4.1, AC4.2, and AC4.3 passed.
+- **What I learned:** ✏️ (hint: what `filter` does to the original `jobs` array)
 
-### Entery 14: November 23, 2026
+---
 
-- **User story:** Jop Popup
-- **What I asked:** "Next"
-- **What the AI suggested:** clicking a card opens its popup
-- **What I changed or rejected, and why:** None, Everthing alligns with the objective
-- **What I learned:** openJobPopup(job): opens the popup with that card's job. Each card keeps its own job.
+**User story:** US5: Keyword search
 
-### Entery 15: November 24, 2026
+- **What I asked:** I asked the AI how to add a search bar that works together with the category filter.
+- **What the AI suggested:** Put both checks in one `applyFilters` function, and use `.toLowerCase()` so capital letters don't matter.
+- **What I changed or rejected, and why:** ✏️ (hint: why one function for both controls?)
+- **How I tested it:** AC5.1 to AC5.5 passed.
+- **What I learned:** ✏️ (hint: the difference between the `change` and `input` events)## Nov 23, 2026
 
-- **User story:** Jop Popup
-- **What I asked:** "Proceed to the nexr step"
-- **What the AI suggested:** Provided a code string where in users can open a card with the keyboard
-- **What I changed or rejected, and why:** None, Everthing alligns with the objective
-- **What I learned:** Keydown is a code used for input refering to "Whenever a key is pressed or pressed down"
+---
+
+**User story:** US1: Browse jobs in a card grid (popup)
+
+- **What I asked:** I asked the AI how to build a popup that shows the full job details when a card is clicked.
+- **What the AI suggested:** Use a `<dialog>` element, fill it with one job's details using a function, and open it with `showModal()`. It also suggested making cards usable with Tab, Enter, and Space.
+- **What I changed or rejected, and why:** ✏️ (hint: what did you add to your jobs array, and what did you change about the cards?)
+- **How I tested it:** AC1.2 passed (each card opens its own details). AC1.3 passed (the Close button closes it). Esc does not close it yet, and I am still checking why.
+- **What I learned:** ✏️ (hint: why we reuse one popup and fill it with different data)
+
+---
+
+**User story:** US4: Category filter
+
+- **What I asked:** I asked the AI how to filter the jobs by category using a dropdown.
+- **What the AI suggested:** Use `jobs.filter(...)` to make a new list, and show it with the `showJobs` function.
+- **What I changed or rejected, and why:** ✏️ (hint: did you change any category names or options?)
+- **How I tested it:** AC4.1, AC4.2, and AC4.3 passed.
+- **What I learned:** ✏️ (hint: what `filter` does to the original `jobs` array)
+
+---
+
+**User story:** US5: Keyword search
+
+- **What I asked:** I asked the AI how to add a search bar that works together with the category filter.
+- **What the AI suggested:** Put both checks in one `applyFilters` function, and use `.toLowerCase()` so capital letters don't matter.
+- **What I changed or rejected, and why:** ✏️ (hint: why one function for both controls?)
+- **How I tested it:** AC5.1 to AC5.5 passed.
+- **What I learned:** ✏️ (hint: the difference between the `change` and `input` events)
