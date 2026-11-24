@@ -21,6 +21,7 @@
           <option value="Cleaning">Cleaning</option>
           <option value="Babysitting">Babysitting</option>
           <option value="Gardening">Gardening</option>
+          <option value="Dry Cleaning">Dry Cleaning</option>
         </select>
 
         <label for="search-input">Search</label>
@@ -28,6 +29,14 @@
       </div>
       <section class="job-grid"></section>
     </main>
+    <dialog id="job-popup" aria-labelledby="popup-title">
+      <h2 id="popup-title"></h2>
+      <p id="popup-description"></p>
+      <p id="popup-location"></p>
+      <p id="popup-pay"></p>
+      <p id="popup-description"></p>
+      <button type="button" id="popup-close">Close</button>
+    </dialog>
 
     <script src="script.js"></script>
   </body>
