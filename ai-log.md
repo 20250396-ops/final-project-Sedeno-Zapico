@@ -128,9 +128,9 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to build a popup that shows the full job details when a card is clicked.
 - **What the AI suggested:** Use a `<dialog>` element, fill it with one job's details using a function, and open it with `showModal()`. It also suggested making cards usable with Tab, Enter, and Space.
-- **What I changed or rejected, and why:** ✏️ (hint: what did you add to your jobs array, and what did you change about the cards?)
+- **What I changed or rejected, and why:** I added description and location to each job in my array so the popup can show full details, and gave each card a data-id so the click knows which job to open. I rejected making one popup per job because it would be repetitive.
 - **How I tested it:** AC1.2 passed (each card opens its own details). AC1.3 passed (the Close button closes it). Esc does not close it yet, and I am still checking why.
-- **What I learned:** ✏️ (hint: why we reuse one popup and fill it with different data)
+- **What I learned:** One reusable popup keeps the code short. I only change the data, not the HTML, and any fix (like Esc) is done once.
 
 ---
 
@@ -138,9 +138,9 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to filter the jobs by category using a dropdown.
 - **What the AI suggested:** Use `jobs.filter(...)` to make a new list, and show it with the `showJobs` function.
-- **What I changed or rejected, and why:** ✏️ (hint: did you change any category names or options?)
+- **What I changed or rejected, and why:** I made the dropdown options match the categories in my jobs array exactly (Cleaning, Babysitting, Gardening) and added an "All" option to show every job again.
 - **How I tested it:** AC4.1, AC4.2, and AC4.3 passed.
-- **What I learned:** ✏️ (hint: what `filter` does to the original `jobs` array)
+- **What I learned:** `filter` makes a new array and does not change the original `jobs` array, so "All" can always show the full list again.
 
 ---
 
@@ -148,9 +148,9 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to add a search bar that works together with the category filter.
 - **What the AI suggested:** Put both checks in one `applyFilters` function, and use `.toLowerCase()` so capital letters don't matter.
-- **What I changed or rejected, and why:** ✏️ (hint: why one function for both controls?)
+- **What I changed or rejected, and why:** I used one `applyFilters` function for both the dropdown and the search bar, so they always work together. I rejected using two separate functions because one would override the other's results.
 - **How I tested it:** AC5.1 to AC5.5 passed.
-- **What I learned:** ✏️ (hint: the difference between the `change` and `input` events)## Nov 23, 2026
+- **What I learned:** The `change` event fires only after the user picks an option (good for the dropdown), while `input` fires on every keystroke (good for live search).
 
 ---
 
@@ -158,9 +158,9 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to build a popup that shows the full job details when a card is clicked.
 - **What the AI suggested:** Use a `<dialog>` element, fill it with one job's details using a function, and open it with `showModal()`. It also suggested making cards usable with Tab, Enter, and Space.
-- **What I changed or rejected, and why:** ✏️ (hint: what did you add to your jobs array, and what did you change about the cards?)
+- **What I changed or rejected, and why:** I added `description` and `location` to each job in my array so the popup can show full details, and gave each card a `data-id` so the click knows which job to open. I rejected making one popup per job because it would be repetitive.
 - **How I tested it:** AC1.2 passed (each card opens its own details). AC1.3 passed (the Close button closes it). Esc does not close it yet, and I am still checking why.
-- **What I learned:** ✏️ (hint: why we reuse one popup and fill it with different data)
+- **What I learned:** One reusable popup keeps the code short. I only change the data, not the HTML, and any fix (like Esc) is done once.
 
 ---
 
@@ -168,16 +168,15 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to filter the jobs by category using a dropdown.
 - **What the AI suggested:** Use `jobs.filter(...)` to make a new list, and show it with the `showJobs` function.
-- **What I changed or rejected, and why:** ✏️ (hint: did you change any category names or options?)
+- **What I changed or rejected, and why:** I made the dropdown options match the categories in my jobs array exactly (Cleaning, Babysitting, Gardening) and added an "All" option to show every job again.
 - **How I tested it:** AC4.1, AC4.2, and AC4.3 passed.
-- **What I learned:** ✏️ (hint: what `filter` does to the original `jobs` array)
-
+- **What I learned:** `filter` makes a new array and does not change the original `jobs` array, so "All" can always show the full list again.
 ---
 
 **User story:** US5: Keyword search
 
 - **What I asked:** I asked the AI how to add a search bar that works together with the category filter.
 - **What the AI suggested:** Put both checks in one `applyFilters` function, and use `.toLowerCase()` so capital letters don't matter.
-- **What I changed or rejected, and why:** ✏️ (hint: why one function for both controls?)
+- **What I changed or rejected, and why:** I used one `applyFilters` function for both the dropdown and the search bar, so they always work together. I rejected using two separate functions because one would override the other's results.
 - **How I tested it:** AC5.1 to AC5.5 passed.
-- **What I learned:** ✏️ (hint: the difference between the `change` and `input` events)
+- **What I learned:** The `change` event fires only after the user picks an option (good for the dropdown), while `input` fires on every keystroke (good for live search).
