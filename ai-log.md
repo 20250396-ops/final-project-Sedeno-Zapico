@@ -138,9 +138,9 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to filter the jobs by category using a dropdown.
 - **What the AI suggested:** Use `jobs.filter(...)` to make a new list, and show it with the `showJobs` function.
-- **What I changed or rejected, and why:** ✏️ (hint: did you change any category names or options?)
+- **What I changed or rejected, and why:** I made the dropdown options match the categories in my jobs array exactly (Cleaning, Babysitting, Gardening) and added an "All" option to show every job again.
 - **How I tested it:** AC4.1, AC4.2, and AC4.3 passed.
-- **What I learned:** ✏️ (hint: what `filter` does to the original `jobs` array)
+- **What I learned:** `filter` makes a new array and does not change the original `jobs` array, so "All" can always show the full list again.
 
 ---
 
