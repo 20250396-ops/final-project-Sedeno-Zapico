@@ -158,9 +158,9 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to build a popup that shows the full job details when a card is clicked.
 - **What the AI suggested:** Use a `<dialog>` element, fill it with one job's details using a function, and open it with `showModal()`. It also suggested making cards usable with Tab, Enter, and Space.
-- **What I changed or rejected, and why:** ✏️ (hint: what did you add to your jobs array, and what did you change about the cards?)
+- **What I changed or rejected, and why:** I added `description` and `location` to each job in my array so the popup can show full details, and gave each card a `data-id` so the click knows which job to open. I rejected making one popup per job because it would be repetitive.
 - **How I tested it:** AC1.2 passed (each card opens its own details). AC1.3 passed (the Close button closes it). Esc does not close it yet, and I am still checking why.
-- **What I learned:** ✏️ (hint: why we reuse one popup and fill it with different data)
+- **What I learned:** One reusable popup keeps the code short. I only change the data, not the HTML, and any fix (like Esc) is done once.
 
 ---
 
