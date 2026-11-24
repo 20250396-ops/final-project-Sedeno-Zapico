@@ -158,3 +158,11 @@ Minimum of 5 meaningful AI logs.
 - **What the AI suggested:** clicking a card opens its popup
 - **What I changed or rejected, and why:** None, Everthing alligns with the objective
 - **What I learned:** openJobPopup(job): opens the popup with that card's job. Each card keeps its own job.
+
+### Entery 15: November 24, 2026
+
+- **User story:** Jop Popup
+- **What I asked:** "Proceed to the nexr step"
+- **What the AI suggested:** Provided a code string where in users can open a card with the keyboard
+- **What I changed or rejected, and why:** None, Everthing alligns with the objective
+- **What I learned:** Keydown is a code used for input refering to "Whenever a key is pressed or pressed down"

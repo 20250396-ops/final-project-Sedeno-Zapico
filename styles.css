@@ -35,3 +35,8 @@ body {
 .job-card {
   cursor: pointer;
 }
+
+.job-card:focus-visible {
+  outline: 3px solid #1a56db;
+  outline-offset: 2px;
+}

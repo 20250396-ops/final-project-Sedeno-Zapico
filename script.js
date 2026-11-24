@@ -4,28 +4,28 @@ const jobs = [
     location: "Carmen, Cagayan de Oro",
     pay: 500,
     category: "Cleaning",
-    description: "wiping dirty places",
+    description: "Discription: wiping dirty places",
   },
   {
     title: "Babysitter Needed",
     location: "Lapasan, Cagayan de Oro",
     pay: 400,
     category: "Babysitting",
-    description: "experience with infant",
+    description: "Discription: experience with infant",
   },
   {
     title: "Garden Cleanup",
     location: "Bulua, Cagayan de Oro",
     pay: 350,
     category: "Gardening",
-    description: "watering my plants.",
+    description: "Discription: watering my plants.",
   },
   {
     title: "Gardening Services",
     location: "Manolo, Cagayan de Oro",
     pay: 350,
     category: "Gardening",
-    description: "planting flowers in the backyard.",
+    description: "Discription: planting flowers in the backyard.",
   },
   {
     title: "Dry Cleaning Services",
@@ -33,7 +33,7 @@ const jobs = [
     pay: 350,
     category: "Dry Cleaning",
     description:
-      "Need help cleaning a 2-bedroom house. Sweeping, mopping, and washing dishes.",
+      "Discription: Need help cleaning a 2-bedroom house. Sweeping, mopping, and washing dishes.",
   },
 ];
 
@@ -64,6 +64,15 @@ function createJobCard(job) {
   card.append(titleEl, locationEl, payEl, categoryEl);
   card.addEventListener("click", function () {
     openJobPopup(job);
+  });
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+
+  card.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openJobPopup(job);
+    }
   });
   return card;
 }
