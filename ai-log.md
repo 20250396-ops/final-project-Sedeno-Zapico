@@ -177,6 +177,6 @@ Minimum of 5 meaningful AI logs.
 
 - **What I asked:** I asked the AI how to add a search bar that works together with the category filter.
 - **What the AI suggested:** Put both checks in one `applyFilters` function, and use `.toLowerCase()` so capital letters don't matter.
-- **What I changed or rejected, and why:** ✏️ (hint: why one function for both controls?)
+- **What I changed or rejected, and why:** I used one `applyFilters` function for both the dropdown and the search bar, so they always work together. I rejected using two separate functions because one would override the other's results.
 - **How I tested it:** AC5.1 to AC5.5 passed.
-- **What I learned:** ✏️ (hint: the difference between the `change` and `input` events)
+- **What I learned:** The `change` event fires only after the user picks an option (good for the dropdown), while `input` fires on every keystroke (good for live search).
