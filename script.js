@@ -35,6 +35,13 @@ const jobs = [
     description:
       "Discription: Need help cleaning a 2-bedroom house. Sweeping, mopping, and washing dishes.",
   },
+  {
+    title: "Handy man for a pool",
+    location: "Tankulan, Manolo Fortich",
+    pay: 350,
+    category: "Handy Man",
+    description: "Discription: Need help fixing tiles on 100m pool.",
+  },
 ];
 
 function createJobCard(job) {
