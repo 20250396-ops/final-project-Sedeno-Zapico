@@ -390,3 +390,17 @@ svg {
   color: #4b5563;
   opacity: 1;
 }
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  background: var(--brand);
+  border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
