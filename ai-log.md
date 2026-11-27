@@ -180,3 +180,11 @@ Minimum of 5 meaningful AI logs.
 - **What I changed or rejected, and why:** I used one `applyFilters` function for both the dropdown and the search bar, so they always work together. I rejected using two separate functions because one would override the other's results.
 - **How I tested it:** AC5.1 to AC5.5 passed.
 - **What I learned:** The `change` event fires only after the user picks an option (good for the dropdown), while `input` fires on every keystroke (good for live search).
+
+**User story:** US1: Job Posting
+
+- **What I asked:** "Proceed to the next US steps"
+- **What the AI suggested:** the Post a Job form providing a java string of code
+- **What I changed or rejected, and why:** None
+- **How I tested it:** not yet tested, will check if it is in accordance to AC 
+- **What I learned:** Each <label for="..."> matches the id of its field. Clicking a label focuses its field, and screen readers read it out.

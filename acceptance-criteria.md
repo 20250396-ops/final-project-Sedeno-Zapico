@@ -24,9 +24,9 @@ AC - Acceptance Criteria
 
 US1: As a job seeker, I want to browse available local jobs in a card grid showing the title, location, pay amount, and category, so that I can easily see job listings.
 
-- AC1.1: Given I am on the home page and jobs are saved, When the page loads, Then I see the jobs as cards in a grid, And each card shows the title, location, pay, and category.
-- AC1.2: Given I am on the home page and the cards are showing, When I click a job card, Then a popup opens, And the popup shows the full description and location of that job.
-- AC1.3: Given the popup is open, When I click the close button, Then the popup closes, And I see the card grid again.
+- AC1.1 <passed>: Given I am on the home page and jobs are saved, When the page loads, Then I see the jobs as cards in a grid, And each card shows the title, location, pay, and category.
+- AC1.2 <passed>: Given I am on the home page and the cards are showing, When I click a job card, Then a popup opens, And the popup shows the full description and location of that job.
+- AC1.3 <passed>: Given the popup is open, When I click the close button, Then the popup closes, And I see the card grid again.
 
 ### Feature: Job Posting
 
@@ -34,6 +34,7 @@ US2: As a homeowner, I want to fill out a form to post a new job with a title, c
 
 - AC2.1: Given I am on the Post a Job page, When I fill in the title, category, description, location, and pay, and click "Post Job", Then the job is saved, And it appears as a new card on the home page.
 - AC2.2: Given I am on the Post a Job page, When I leave any field empty and click "Post Job", Then the job is not saved, And I see a message that says which field is missing.
+- AC2.3: Given I am on the Post a Job page, When I enter a pay below ₱100 and click "Post Job", Then the job is not saved, And I see a message that the pay must be at least ₱100.
 
 ### Feature: Five Star Rating
 

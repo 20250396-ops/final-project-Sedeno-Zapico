@@ -128,6 +128,9 @@ const popupClose = document.getElementById("popup-close");
 
 function openJobPopup(job) {
   document.getElementById("popup-title").textContent = job.title;
+  document.getElementById("popup-title").textContent = job.title;
+document.getElementById("popup-category").textContent =
+  "Category: " + job.category;
   document.getElementById("popup-description").textContent = job.description;
   document.getElementById("popup-location").textContent =
     "Location: " + job.location;
@@ -137,4 +140,28 @@ function openJobPopup(job) {
 
 popupClose.addEventListener("click", function () {
   popup.close();
+});
+
+const postForm = document.getElementById("post-form");
+const postMessageEl = document.getElementById("post-message");
+
+function validatePost() {
+  const title = document.getElementById("post-title").value.trim();
+  const category = document.getElementById("post-category").value;
+  const place = document.getElementById("post-location").value.trim();
+  const pay = document.getElementById("post-pay").value;
+  const description = document.getElementById("post-description").value.trim();
+
+  if (title === "") return "Please enter the title.";
+  if (category === "") return "Please choose a category.";
+  if (place === "") return "Please enter the location.";
+  if (pay === "") return "Please enter the pay.";
+  if (Number(pay) < 150) return "The pay must be at least ₱150.";
+  if (description === "") return "Please enter the description.";
+  return "";
+}
+
+postForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  postMessageEl.textContent = validatePost();
 });
