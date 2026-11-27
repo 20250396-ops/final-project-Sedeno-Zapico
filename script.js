@@ -137,6 +137,9 @@ document.getElementById("popup-category").textContent =
   document.getElementById("popup-location").textContent =
     "Location: " + job.location;
   document.getElementById("popup-pay").textContent = "Pay: ₱" + job.pay;
+    currentJob = job;
+  popupTakedown.hidden = !job.mine;
+  popup.showModal();
   popup.showModal();
 }
 
