@@ -125,6 +125,8 @@ categoryFilter.addEventListener("change", applyFilters);
 searchInput.addEventListener("input", applyFilters);
 const popup = document.getElementById("job-popup");
 const popupClose = document.getElementById("popup-close");
+const popupTakedown = document.getElementById("popup-takedown");
+let currentJob = null;
 
 function openJobPopup(job) {
   document.getElementById("popup-title").textContent = job.title;
