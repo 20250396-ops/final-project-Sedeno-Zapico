@@ -42,7 +42,31 @@ const jobs = [
     category: "Handy Man",
     description: "Discription: Need help fixing tiles on 100m pool.",
   },
-];
+const STORAGE_KEY = "alijob-my-jobs";
+
+function saveMyJobs() {
+  const mine = jobs.filter(function (job) {
+    return job.mine;
+  });
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(mine));
+  } catch (error) {
+    console.error("Could not save jobs:", error);
+  }
+}
+
+function loadMyJobs() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (Array.isArray(saved)) {
+      jobs.unshift(...saved);
+    }
+  } catch (error) {
+    console.error("Could not load jobs:", error);
+  }
+}
+
+loadMyJobs();];
 
 function createJobCard(job) {
   const card = document.createElement("article");
