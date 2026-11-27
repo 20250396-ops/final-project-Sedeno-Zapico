@@ -24,9 +24,9 @@ AC - Acceptance Criteria
 
 US1: As a job seeker, I want to browse available local jobs in a card grid showing the title, location, pay amount, and category, so that I can easily see job listings.
 
-- AC1.1: Given I am on the home page and jobs are saved, When the page loads, Then I see the jobs as cards in a grid, And each card shows the title, location, pay, and category.
-- AC1.2: Given I am on the home page and the cards are showing, When I click a job card, Then a popup opens, And the popup shows the full description and location of that job.
-- AC1.3: Given the popup is open, When I click the close button, Then the popup closes, And I see the card grid again.
+- AC1.1 <passed>: Given I am on the home page and jobs are saved, When the page loads, Then I see the jobs as cards in a grid, And each card shows the title, location, pay, and category.
+- AC1.2 <passed>: Given I am on the home page and the cards are showing, When I click a job card, Then a popup opens, And the popup shows the full description and location of that job.
+- AC1.3 <passed>: Given the popup is open, When I click the close button, Then the popup closes, And I see the card grid again.
 
 ### Feature: Job Posting
 

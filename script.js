@@ -128,6 +128,9 @@ const popupClose = document.getElementById("popup-close");
 
 function openJobPopup(job) {
   document.getElementById("popup-title").textContent = job.title;
+  document.getElementById("popup-title").textContent = job.title;
+document.getElementById("popup-category").textContent =
+  "Category: " + job.category;
   document.getElementById("popup-description").textContent = job.description;
   document.getElementById("popup-location").textContent =
     "Location: " + job.location;
