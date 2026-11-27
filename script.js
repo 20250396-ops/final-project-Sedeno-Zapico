@@ -131,7 +131,7 @@ let currentJob = null;
 function openJobPopup(job) {
   document.getElementById("popup-title").textContent = job.title;
   document.getElementById("popup-title").textContent = job.title;
-document.getElementById("popup-category").textContent =
+  document.getElementById("popup-category").textContent =
   "Category: " + job.category;
   document.getElementById("popup-description").textContent = job.description;
   document.getElementById("popup-location").textContent =
@@ -180,6 +180,8 @@ postForm.addEventListener("submit", function (event) {
     pay: Number(document.getElementById("post-pay").value),
     category: document.getElementById("post-category").value,
     description: document.getElementById("post-description").value.trim(),
+    description: document.getElementById("post-description").value.trim(),
+    mine: true,
   };
 
   jobs.unshift(newJob);
