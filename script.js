@@ -245,41 +245,58 @@ popupTakedown.addEventListener("click", function () {
   applyFilters();
 });
 
-const seekers= [
-  { name: "Maria Santos", icon: "🌱", skill: "Gardening", ratings: [5, 4, 4, 5] },
-  { name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4] },
-  { name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [] },
+const SEEKERS_KEY = "alijob-seekers";
+
+const seekers = [
+  { id: "s1", name: "Maria Santos", icon: "🌱", skill: "Gardening", ratings: [5, 4, 4, 5], mine: false },
+  { id: "s2", name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4], mine: false },
+  { id: "s3", name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [], mine: false },
 ];
 
-const RATINGS_KEY = "alijob-seeker-ratings";
-
-function saveRatings() {
-  const data = {};
-  seekers.forEach(function (seeker) {
-    data[seeker.name] = seeker.ratings;
-  });
+function saveSeekers() {
   try {
-    localStorage.setItem(RATINGS_KEY, JSON.stringify(data));
+    localStorage.setItem(SEEKERS_KEY, JSON.stringify(seekers));
   } catch (error) {
-    console.error("Could not save ratings:", error);
+    console.error("Could not save seekers:", error);
   }
 }
 
-function loadRatings() {
+function isValidSeeker(item) {
+  return (
+    item !== null &&
+    typeof item === "object" &&
+    typeof item.id === "string" &&
+    typeof item.name === "string" &&
+    typeof item.icon === "string" &&
+    typeof item.skill === "string" &&
+    Array.isArray(item.ratings)
+  );
+}
+
+function loadSeekers() {
   try {
-    const saved = JSON.parse(localStorage.getItem(RATINGS_KEY));
-    if (saved && typeof saved === "object") {
-      seekers.forEach(function (seeker) {
-        const list = saved[seeker.name];
-        if (Array.isArray(list)) {
-          seeker.ratings = list.filter(function (value) {
-            return Number.isInteger(value) && value >= 1 && value <= 5;
-          });
-        }
-      });
+    const saved = JSON.parse(localStorage.getItem(SEEKERS_KEY));
+    if (!Array.isArray(saved)) {
+      return;
+    }
+    const clean = saved.filter(isValidSeeker).map(function (item) {
+      return {
+        id: item.id,
+        name: item.name,
+        icon: item.icon,
+        skill: item.skill,
+        ratings: item.ratings.filter(function (value) {
+          return Number.isInteger(value) && value >= 1 && value <= 5;
+        }),
+        mine: item.mine === true,
+      };
+    });
+    if (clean.length > 0) {
+      seekers.length = 0;
+      seekers.push(...clean);
     }
   } catch (error) {
-    console.error("Could not load ratings:", error);
+    console.error("Could not load seekers:", error);
   }
 }
 
@@ -349,7 +366,6 @@ function createSeekerCard(seeker) {
   rateLabel.textContent = "Rate: ";
   rateRow.append(rateLabel);
 
-  const seekerIndex = seekers.indexOf(seeker);
   for (let star = 1; star <= 5; star++) {
     const starButton = document.createElement("button");
     starButton.type = "button";
@@ -359,8 +375,8 @@ function createSeekerCard(seeker) {
       "aria-label",
       "Rate " + seeker.name + " " + pluralStars(star)
     );
-    starButton.dataset.seeker = seekerIndex;
-    starButton.dataset.star = star;
+    starButton.dataset.seeker = seeker.id;
+    starButton.dataset.star = String(star);
     starButton.addEventListener("click", function () {
       rateSeeker(seeker, star);
     });
@@ -384,21 +400,66 @@ function showSeekers() {
 
 function rateSeeker(seeker, value) {
   seeker.ratings.push(value);
-  saveRatings();
+  saveSeekers();
   showSeekers();
 
   ratingMessage.textContent =
     "You gave " + seeker.name + " " + pluralStars(value) +
     ". New average: " + getAverage(seeker.ratings).toFixed(1);
 
-  const index = seekers.indexOf(seeker);
-  const sameStar = seekerList.querySelector(
-    '[data-seeker="' + index + '"][data-star="' + value + '"]'
+  const sameStar = Array.from(seekerList.querySelectorAll(".rate-star")).find(
+    function (button) {
+      return (
+        button.dataset.seeker === seeker.id &&
+        button.dataset.star === String(value)
+      );
+    }
   );
   if (sameStar) {
     sameStar.focus();
   }
 }
 
-loadRatings();
+loadSeekers();
 showSeekers();
+
+const signupForm = document.getElementById("signup-form");
+const signupMessage = document.getElementById("signup-message");
+
+function validateSignup() {
+  const name = document.getElementById("signup-name").value.trim();
+  const skill = document.getElementById("signup-skill").value;
+  const icon = document.getElementById("signup-icon").value;
+
+  if (name === "") return "Please enter your name.";
+  if (skill === "") return "Please choose a skill.";
+  if (icon === "") return "Please choose an icon.";
+  return "";
+}
+
+signupForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const problem = validateSignup();
+  if (problem !== "") {
+    signupMessage.textContent = problem;
+    return;
+  }
+
+  const newSeeker = {
+    id: "u" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    name: document.getElementById("signup-name").value.trim(),
+    icon: document.getElementById("signup-icon").value,
+    skill: document.getElementById("signup-skill").value,
+    ratings: [],
+    mine: true,
+  };
+
+  seekers.unshift(newSeeker);
+  saveSeekers();
+  showSeekers();
+
+  signupForm.reset();
+  signupMessage.textContent =
+    "Profile created! You are now the first job seeker in the list.";
+});

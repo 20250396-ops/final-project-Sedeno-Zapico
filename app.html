@@ -60,6 +60,38 @@
     <p id="post-message" aria-live="polite"></p>
   </form>
 </section>
+
+<section class="signup" id="signup" aria-labelledby="signup-heading">
+  <h2 id="signup-heading">Create a Job Seeker Profile</h2>
+
+  <form id="signup-form" novalidate>
+    <label for="signup-name">Name</label>
+    <input type="text" id="signup-name" maxlength="40" />
+
+    <label for="signup-skill">Skill</label>
+    <select id="signup-skill">
+      <option value="">Choose a skill</option>
+      <option value="Cleaning">Cleaning</option>
+      <option value="Babysitting">Babysitting</option>
+      <option value="Gardening">Gardening</option>
+      <option value="Dry Cleaning">Dry Cleaning</option>
+      <option value="Handy Man">Handy Man</option>
+    </select>
+
+    <label for="signup-icon">Icon</label>
+    <select id="signup-icon">
+      <option value="">Choose an icon</option>
+      <option value="🧹">🧹 Broom</option>
+      <option value="👶">👶 Baby</option>
+      <option value="🌱">🌱 Plant</option>
+      <option value="🧺">🧺 Basket</option>
+      <option value="🛠️">🛠️ Tools</option>
+    </select>
+
+    <button type="submit">Create Profile</button>
+    <p id="signup-message" aria-live="polite"></p>
+  </form>
+</section>
 <section class="seekers" aria-labelledby="seekers-heading">
   <h2 id="seekers-heading">Job Seekers</h2>
   <div class="seeker-list"></div>
