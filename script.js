@@ -158,12 +158,12 @@ function openJobPopup(job) {
   document.getElementById("popup-title").textContent = job.title;
   document.getElementById("popup-title").textContent = job.title;
   document.getElementById("popup-category").textContent =
-  "Category: " + job.category;
+    "Category: " + job.category;
   document.getElementById("popup-description").textContent = job.description;
   document.getElementById("popup-location").textContent =
     "Location: " + job.location;
   document.getElementById("popup-pay").textContent = "Pay: ₱" + job.pay;
-    currentJob = job;
+  currentJob = job;
   popupTakedown.hidden = !job.mine;
   popup.showModal();
   popup.showModal();
@@ -210,7 +210,7 @@ postForm.addEventListener("submit", function (event) {
     mine: true,
   };
 
-    jobs.unshift(newJob);
+  jobs.unshift(newJob);
   saveMyJobs();
 
   categoryFilter.value = "all";
@@ -218,7 +218,8 @@ postForm.addEventListener("submit", function (event) {
   showJobs(jobs);
 
   postForm.reset();
-  postMessageEl.textContent = "Job posted! It is now the first card in the list.";
+  postMessageEl.textContent =
+    "Job posted! It is now the first card in the list.";
 });
 
 popupTakedown.addEventListener("click", function () {
@@ -227,13 +228,13 @@ popupTakedown.addEventListener("click", function () {
   }
 
   const sure = confirm(
-    "Take down \"" + currentJob.title + "\"? This cannot be undone."
+    'Take down "' + currentJob.title + '"? This cannot be undone.',
   );
   if (!sure) {
     return;
   }
 
-    const index = jobs.indexOf(currentJob);
+  const index = jobs.indexOf(currentJob);
   if (index !== -1) {
     jobs.splice(index, 1);
   }
@@ -243,3 +244,52 @@ popupTakedown.addEventListener("click", function () {
   popup.close();
   applyFilters();
 });
+const seekers = [
+  {
+    name: "Maria Santos",
+    icon: "🌱",
+    skill: "Gardening",
+    ratings: [5, 4, 4, 5],
+  },
+  { name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4] },
+  { name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [] },
+];
+
+function getAverage(ratings) {
+  if (ratings.length === 0) {
+    return null;
+  }
+  let total = 0;
+  ratings.forEach(function (rating) {
+    total += rating;
+  });
+  return total / ratings.length;
+}
+
+function formatAverage(ratings) {
+  const average = getAverage(ratings);
+  if (average === null) {
+    return "No ratings yet";
+  }
+  return average.toFixed(1);
+}
+
+const seekerList = document.querySelector(".seeker-list");
+
+function showSeekers() {
+  seekerList.innerHTML = "";
+  seekers.forEach(function (seeker) {
+    const line = document.createElement("p");
+    line.textContent =
+      seeker.icon +
+      " " +
+      seeker.name +
+      " (" +
+      seeker.skill +
+      "): " +
+      formatAverage(seeker.ratings);
+    seekerList.append(line);
+  });
+}
+
+showSeekers();
