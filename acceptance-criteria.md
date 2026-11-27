@@ -57,11 +57,11 @@ US4: As a job seeker, I want to filter the job listings by category using a drop
 US5: As a job seeker, I want to search the job listings by typing a keyword, so that I can quickly find a job that matches what I need.
 git add
 
-- AC5.1: Given I am on the home page and the job cards are showing, When I type a keyword in the search bar, Then only the cards whose title or location contains the keyword are shown.
-- AC5.2: Given I have typed a keyword, When I clear the search bar, Then all the job cards are shown again.
-- AC5.3: Given I have chosen a category, When I type a keyword in the search bar, Then only the cards that match both the category and the keyword are shown.
-- AC5.4: Given I am on the home page, When I type a keyword in capital or small letters, Then the same cards are shown.
-- AC5.5: Given I am on the home page, When I type a keyword that matches no job, Then I see a "No jobs found" message, And no cards are shown.
+- AC5.1 <passed>: Given I am on the home page and the job cards are showing, When I type a keyword in the search bar, Then only the cards whose title or location contains the keyword are shown.
+- AC5.2 <passed>: Given I have typed a keyword, When I clear the search bar, Then all the job cards are shown again.
+- AC5.3 <passed>: Given I have chosen a category, When I type a keyword in the search bar, Then only the cards that match both the category and the keyword are shown.
+- AC5.4 <passed>: Given I am on the home page, When I type a keyword in capital or small letters, Then the same cards are shown.
+- AC5.5 <passed>: Given I am on the home page, When I type a keyword that matches no job, Then I see a "No jobs found" message, And no cards are shown.
 
 
 ### Feature: Take Down a Job
