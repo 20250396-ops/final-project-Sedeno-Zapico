@@ -245,33 +245,43 @@ popupTakedown.addEventListener("click", function () {
   applyFilters();
 });
 
-const seekers = [
+const seekers= [
   { name: "Maria Santos", icon: "🌱", skill: "Gardening", ratings: [5, 4, 4, 5] },
   { name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4] },
   { name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [] },
 ];
 
-function getAverage(ratings) {
-  if (ratings.length === 0) {
-    return null;
-  }
-  let total = 0;
-  ratings.forEach(function (rating) {
-    total += rating;
+const RATINGS_KEY = "alijob-seeker-ratings";
+
+function saveRatings() {
+  const data = {};
+  seekers.forEach(function (seeker) {
+    data[seeker.name] = seeker.ratings;
   });
-  return total / ratings.length;
+  try {
+    localStorage.setItem(RATINGS_KEY, JSON.stringify(data));
+  } catch (error) {
+    console.error("Could not save ratings:", error);
+  }
 }
 
-function makeStars(average) {
-  const filled = Math.round(average);
-  return "★".repeat(filled) + "☆".repeat(5 - filled);
+function loadRatings() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(RATINGS_KEY));
+    if (saved && typeof saved === "object") {
+      seekers.forEach(function (seeker) {
+        const list = saved[seeker.name];
+        if (Array.isArray(list)) {
+          seeker.ratings = list.filter(function (value) {
+            return Number.isInteger(value) && value >= 1 && value <= 5;
+          });
+        }
+      });
+    }
+  } catch (error) {
+    console.error("Could not load ratings:", error);
+  }
 }
-
-const seekers = [
-  { name: "Maria Santos", icon: "🌱", skill: "Gardening", ratings: [5, 4, 4, 5] },
-  { name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4] },
-  { name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [] },
-];
 
 function getAverage(ratings) {
   if (ratings.length === 0) {
@@ -374,6 +384,7 @@ function showSeekers() {
 
 function rateSeeker(seeker, value) {
   seeker.ratings.push(value);
+  saveRatings();
   showSeekers();
 
   ratingMessage.textContent =
@@ -389,4 +400,5 @@ function rateSeeker(seeker, value) {
   }
 }
 
+loadRatings();
 showSeekers();
