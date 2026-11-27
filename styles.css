@@ -263,3 +263,95 @@ button:focus-visible {
   outline: 3px solid var(--brand);
   outline-offset: 2px;
 }
+
+:root {
+  --danger: #b91c1c;
+}
+
+dialog {
+  width: min(32rem, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog h2 {
+  margin: 0 0 0.5rem;
+}
+
+dialog p {
+  margin: 0.5rem 0;
+}
+
+#popup-pay {
+  font-weight: 700;
+}
+
+#popup-close,
+#popup-takedown {
+  min-height: 2.75rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+#popup-close {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+#popup-takedown {
+  color: #ffffff;
+  background: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.seeker-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.seeker-card {
+  margin-bottom: 0;
+  background: var(--surface);
+}
+
+.seeker-info {
+  min-width: 0;
+}
+
+.rate-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#rating-message {
+  min-height: 1.5rem;
+  font-weight: 600;
+}
+
+.job-card,
+.seeker-card {
+  transition: border-color 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-card,
+  .seeker-card {
+    transition: none;
+  }
+}
