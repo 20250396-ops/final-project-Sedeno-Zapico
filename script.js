@@ -244,13 +244,9 @@ popupTakedown.addEventListener("click", function () {
   popup.close();
   applyFilters();
 });
+
 const seekers = [
-  {
-    name: "Maria Santos",
-    icon: "🌱",
-    skill: "Gardening",
-    ratings: [5, 4, 4, 5],
-  },
+  { name: "Maria Santos", icon: "🌱", skill: "Gardening", ratings: [5, 4, 4, 5] },
   { name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4] },
   { name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [] },
 ];
@@ -266,30 +262,131 @@ function getAverage(ratings) {
   return total / ratings.length;
 }
 
-function formatAverage(ratings) {
-  const average = getAverage(ratings);
-  if (average === null) {
-    return "No ratings yet";
+function makeStars(average) {
+  const filled = Math.round(average);
+  return "★".repeat(filled) + "☆".repeat(5 - filled);
+}
+
+const seekers = [
+  { name: "Maria Santos", icon: "🌱", skill: "Gardening", ratings: [5, 4, 4, 5] },
+  { name: "Juan Dela Cruz", icon: "🧹", skill: "Cleaning", ratings: [3, 4] },
+  { name: "Ana Reyes", icon: "👶", skill: "Babysitting", ratings: [] },
+];
+
+function getAverage(ratings) {
+  if (ratings.length === 0) {
+    return null;
   }
-  return average.toFixed(1);
+  let total = 0;
+  ratings.forEach(function (rating) {
+    total += rating;
+  });
+  return total / ratings.length;
+}
+
+function makeStars(average) {
+  const filled = Math.round(average);
+  return "★".repeat(filled) + "☆".repeat(5 - filled);
 }
 
 const seekerList = document.querySelector(".seeker-list");
+const ratingMessage = document.getElementById("rating-message");
+
+function pluralStars(count) {
+  return count + (count === 1 ? " star" : " stars");
+}
+
+function createSeekerCard(seeker) {
+  const card = document.createElement("article");
+  card.className = "seeker-card";
+
+  const iconEl = document.createElement("span");
+  iconEl.className = "seeker-icon";
+  iconEl.textContent = seeker.icon;
+  iconEl.setAttribute("aria-hidden", "true");
+
+  const nameEl = document.createElement("h3");
+  nameEl.className = "seeker-name";
+  nameEl.textContent = seeker.name;
+
+  const skillEl = document.createElement("p");
+  skillEl.className = "seeker-skill";
+  skillEl.textContent = "Skill: " + seeker.skill;
+
+  const ratingEl = document.createElement("p");
+  ratingEl.className = "seeker-rating";
+
+  const average = getAverage(seeker.ratings);
+  if (average === null) {
+    ratingEl.textContent = "No ratings yet";
+  } else {
+    const starsEl = document.createElement("span");
+    starsEl.className = "stars";
+    starsEl.textContent = makeStars(average);
+    starsEl.setAttribute("aria-hidden", "true");
+
+    const numberEl = document.createElement("span");
+    numberEl.className = "rating-number";
+    numberEl.textContent = " " + average.toFixed(1);
+
+    ratingEl.append(starsEl, numberEl);
+  }
+
+  const rateRow = document.createElement("div");
+  rateRow.className = "rate-row";
+
+  const rateLabel = document.createElement("span");
+  rateLabel.textContent = "Rate: ";
+  rateRow.append(rateLabel);
+
+  const seekerIndex = seekers.indexOf(seeker);
+  for (let star = 1; star <= 5; star++) {
+    const starButton = document.createElement("button");
+    starButton.type = "button";
+    starButton.className = "rate-star";
+    starButton.textContent = "★";
+    starButton.setAttribute(
+      "aria-label",
+      "Rate " + seeker.name + " " + pluralStars(star)
+    );
+    starButton.dataset.seeker = seekerIndex;
+    starButton.dataset.star = star;
+    starButton.addEventListener("click", function () {
+      rateSeeker(seeker, star);
+    });
+    rateRow.append(starButton);
+  }
+
+  const info = document.createElement("div");
+  info.className = "seeker-info";
+  info.append(nameEl, skillEl, ratingEl, rateRow);
+
+  card.append(iconEl, info);
+  return card;
+}
 
 function showSeekers() {
   seekerList.innerHTML = "";
   seekers.forEach(function (seeker) {
-    const line = document.createElement("p");
-    line.textContent =
-      seeker.icon +
-      " " +
-      seeker.name +
-      " (" +
-      seeker.skill +
-      "): " +
-      formatAverage(seeker.ratings);
-    seekerList.append(line);
+    seekerList.append(createSeekerCard(seeker));
   });
+}
+
+function rateSeeker(seeker, value) {
+  seeker.ratings.push(value);
+  showSeekers();
+
+  ratingMessage.textContent =
+    "You gave " + seeker.name + " " + pluralStars(value) +
+    ". New average: " + getAverage(seeker.ratings).toFixed(1);
+
+  const index = seekers.indexOf(seeker);
+  const sameStar = seekerList.querySelector(
+    '[data-seeker="' + index + '"][data-star="' + value + '"]'
+  );
+  if (sameStar) {
+    sameStar.focus();
+  }
 }
 
 showSeekers();

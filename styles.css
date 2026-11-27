@@ -60,3 +60,52 @@ body {
   outline: 3px solid #1a56db;
   outline-offset: 2px;
 }
+.seeker-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.seeker-icon {
+  font-size: 2.5rem;
+}
+
+.seeker-name {
+  margin: 0;
+}
+
+.seeker-skill,
+.seeker-rating {
+  margin: 0.25rem 0 0;
+}
+
+.stars {
+  color: #b45309;
+}
+
+.rate-row {
+  margin: 0.5rem 0 0;
+}
+
+.rate-star {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.rate-star:hover {
+  color: #b45309;
+}
+
+.rate-star:focus-visible {
+  outline: 3px solid #1a56db;
+  outline-offset: 2px;
+}
