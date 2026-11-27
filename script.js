@@ -42,6 +42,8 @@ const jobs = [
     category: "Handy Man",
     description: "Discription: Need help fixing tiles on 100m pool.",
   },
+];
+
 const STORAGE_KEY = "alijob-my-jobs";
 
 function saveMyJobs() {
@@ -66,7 +68,7 @@ function loadMyJobs() {
   }
 }
 
-loadMyJobs();];
+loadMyJobs();
 
 function createJobCard(job) {
   const card = document.createElement("article");
@@ -208,7 +210,8 @@ postForm.addEventListener("submit", function (event) {
     mine: true,
   };
 
-  jobs.unshift(newJob);
+    jobs.unshift(newJob);
+  saveMyJobs();
 
   categoryFilter.value = "all";
   searchInput.value = "";
@@ -230,10 +233,11 @@ popupTakedown.addEventListener("click", function () {
     return;
   }
 
-  const index = jobs.indexOf(currentJob);
+    const index = jobs.indexOf(currentJob);
   if (index !== -1) {
     jobs.splice(index, 1);
   }
+  saveMyJobs();
 
   currentJob = null;
   popup.close();

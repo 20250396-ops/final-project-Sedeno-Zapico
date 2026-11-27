@@ -68,7 +68,7 @@ git add
 
 US6: As a homeowner, I want to take down a job I posted once I find a worker, so that job seekers stop seeing a job that is already filled.
 
-- AC6.1: Given I posted a job, When I open its popup, Then I see a "Take down" button.
-- AC6.2: Given I click "Take down" and confirm, When the popup closes, Then the job is gone from the grid, And it no longer appears in the filter or search results.
-- AC6.3: Given I click "Take down" and cancel, When the popup closes, Then the job is still in the grid.
-- AC6.4: Given a job was not posted by me, When I open its popup, Then I do not see a "Take down" button.
+- AC6.1 <passed>: Given I posted a job, When I open its popup, Then I see a "Take down" button.
+- AC6.2 <passed>: Given I click "Take down" and confirm, When the popup closes, Then the job is gone from the grid, And it no longer appears in the filter or search results.
+- AC6.3 <passed>: Given I click "Take down" and cancel, When the popup closes, Then the job is still in the grid.
+- AC6.4 <passed>: Given a job was not posted by me, When I open its popup, Then I do not see a "Take down" button.
