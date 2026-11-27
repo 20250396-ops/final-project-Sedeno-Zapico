@@ -160,8 +160,29 @@ function validatePost() {
   if (description === "") return "Please enter the description.";
   return "";
 }
-
 postForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  postMessageEl.textContent = validatePost();
+
+  const problem = validatePost();
+  if (problem !== "") {
+    postMessageEl.textContent = problem;
+    return;
+  }
+
+  const newJob = {
+    title: document.getElementById("post-title").value.trim(),
+    location: document.getElementById("post-location").value.trim(),
+    pay: Number(document.getElementById("post-pay").value),
+    category: document.getElementById("post-category").value,
+    description: document.getElementById("post-description").value.trim(),
+  };
+
+  jobs.unshift(newJob);
+
+  categoryFilter.value = "all";
+  searchInput.value = "";
+  showJobs(jobs);
+
+  postForm.reset();
+  postMessageEl.textContent = "Job posted! It is now the first card in the list.";
 });
