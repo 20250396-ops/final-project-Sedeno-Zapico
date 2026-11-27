@@ -186,3 +186,25 @@ postForm.addEventListener("submit", function (event) {
   postForm.reset();
   postMessageEl.textContent = "Job posted! It is now the first card in the list.";
 });
+
+popupTakedown.addEventListener("click", function () {
+  if (currentJob === null || !currentJob.mine) {
+    return;
+  }
+
+  const sure = confirm(
+    "Take down \"" + currentJob.title + "\"? This cannot be undone."
+  );
+  if (!sure) {
+    return;
+  }
+
+  const index = jobs.indexOf(currentJob);
+  if (index !== -1) {
+    jobs.splice(index, 1);
+  }
+
+  currentJob = null;
+  popup.close();
+  applyFilters();
+});
