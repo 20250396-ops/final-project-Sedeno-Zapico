@@ -40,35 +40,35 @@ US2: As a homeowner, I want to fill out a form to post a new job with a title, c
 
 US3: As a homeowner, I want to view and give 1 to 5 star ratings on job seeker profiles, so that I can choose reliable workers.
 
-- AC3.1: Given I am on a job seeker's profile page and they have ratings, When the page loads, Then I see their average rating as stars beside their icon, And I see the number (for example, 4.0).
-- AC3.2: Given I am on a job seeker's profile page and they have no ratings, When the page loads, Then I see "No ratings yet" beside their icon.
-- AC3.3: Given I am on a job seeker's profile page, When I click a star from 1 to 5, Then that rating is added to the job seeker's list of ratings, And the average on the profile updates right away.
+- AC3.1<passed> : Given I am on a job seeker's profile and they have ratings, When the page loads, Then I see their average rating as stars beside their icon, And I see the number (for example, 4.0).
+- AC3.2<passed>: Given I am on a job seeker's profile and they have no ratings, When the page loads, Then I see "No ratings yet" beside their icon.
+- AC3.3<passed>: Given I am on a job seeker's profile page, When I click a star from 1 to 5, Then that rating is added to the job seeker's list of ratings, And the average on the profile updates right away.
 
 ### Feature: Category Filter
 
 US4: As a job seeker, I want to filter the job listings by category using a dropdown, so that I can see only the kind of work I am looking for.
 
-- AC4.1 <passed>: Given I am on the home page and the job cards are showing, When I choose a category from the dropdown, Then only the cards with that category are shown, And the other cards are hidden.
-- AC4.2 <passed>: Given I have chosen a category, When I choose "All", Then all the job cards are shown again.
-- AC4.3 <passed>: Given I am on the home page, When I choose a category that has no jobs, Then I see a "No jobs found" message, And no cards are shown.
+- AC4.1<passed>: Given I am on the home page and the job cards are showing, When I choose a category from the dropdown, Then only the cards with that category are shown, And the other cards are hidden.
+- AC4.2<passed>: Given I have chosen a category, When I choose "All", Then all the job cards are shown again.
+- AC4.3<passed>: Given I am on the home page, When I choose a category that has no jobs, Then I see a "No jobs found" message, And no cards are shown.
 
 ### Feature: Keyword Search
 
 US5: As a job seeker, I want to search the job listings by typing a keyword, so that I can quickly find a job that matches what I need.
 git add
 
-- AC5.1 <passed>: Given I am on the home page and the job cards are showing, When I type a keyword in the search bar, Then only the cards whose title or location contains the keyword are shown.
-- AC5.2 <passed>: Given I have typed a keyword, When I clear the search bar, Then all the job cards are shown again.
-- AC5.3 <passed>: Given I have chosen a category, When I type a keyword in the search bar, Then only the cards that match both the category and the keyword are shown.
-- AC5.4 <passed>: Given I am on the home page, When I type a keyword in capital or small letters, Then the same cards are shown.
-- AC5.5 <passed>: Given I am on the home page, When I type a keyword that matches no job, Then I see a "No jobs found" message, And no cards are shown.
+- AC5.1<passed>: Given I am on the home page and the job cards are showing, When I type a keyword in the search bar, Then only the cards whose title or location contains the keyword are shown.
+- AC5.2<passed>: Given I have typed a keyword, When I clear the search bar, Then all the job cards are shown again.
+- AC5.3<passed>: Given I have chosen a category, When I type a keyword in the search bar, Then only the cards that match both the category and the keyword are shown.
+- AC5.4<passed>: Given I am on the home page, When I type a keyword in capital or small letters, Then the same cards are shown.
+- AC5.5<passed>: Given I am on the home page, When I type a keyword that matches no job, Then I see a "No jobs found" message, And no cards are shown.
 
 
 ### Feature: Take Down a Job
 
 US6: As a homeowner, I want to take down a job I posted once I find a worker, so that job seekers stop seeing a job that is already filled.
 
-- AC6.1 <passed>: Given I posted a job, When I open its popup, Then I see a "Take down" button.
-- AC6.2 <passed>: Given I click "Take down" and confirm, When the popup closes, Then the job is gone from the grid, And it no longer appears in the filter or search results.
-- AC6.3 <passed>: Given I click "Take down" and cancel, When the popup closes, Then the job is still in the grid.
-- AC6.4 <passed>: Given a job was not posted by me, When I open its popup, Then I do not see a "Take down" button.
+- AC6.1<passed>: Given I posted a job, When I open its popup, Then I see a "Take down" button.
+- AC6.2<passed>: Given I click "Take down" and confirm, When the popup closes, Then the job is gone from the grid, And it no longer appears in the filter or search results.
+- AC6.3<passed>: Given I click "Take down" and cancel, When the popup closes, Then the job is still in the grid.
+- AC6.4<passed>: Given a job was not posted by me, When I open its popup, Then I do not see a "Take down" button.
