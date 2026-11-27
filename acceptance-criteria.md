@@ -62,3 +62,13 @@ git add
 - AC5.3: Given I have chosen a category, When I type a keyword in the search bar, Then only the cards that match both the category and the keyword are shown.
 - AC5.4: Given I am on the home page, When I type a keyword in capital or small letters, Then the same cards are shown.
 - AC5.5: Given I am on the home page, When I type a keyword that matches no job, Then I see a "No jobs found" message, And no cards are shown.
+
+
+### Feature: Take Down a Job
+
+US6: As a homeowner, I want to take down a job I posted once I find a worker, so that job seekers stop seeing a job that is already filled.
+
+- AC6.1: Given I posted a job, When I open its popup, Then I see a "Take down" button.
+- AC6.2: Given I click "Take down" and confirm, When the popup closes, Then the job is gone from the grid, And it no longer appears in the filter or search results.
+- AC6.3: Given I click "Take down" and cancel, When the popup closes, Then the job is still in the grid.
+- AC6.4: Given a job was not posted by me, When I open its popup, Then I do not see a "Take down" button.
